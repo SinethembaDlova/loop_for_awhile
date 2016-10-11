@@ -1,0 +1,39 @@
+const assert = require('assert');
+
+var allFromTown = function(regNum)
+{
+  var storeList = regNum.split(', ');
+  var fromCPT = [];
+  //var fromPaarl = [];
+  //var fromJHB = [];
+
+  for (var i = 0; i < storeList.length; i++)
+  {
+    if(storeList[i].startsWith("CA"))
+    {
+      fromCPT.push(storeList[i]);
+    }
+
+  /*  if(storeList[i].startsWith("CJ"))
+    {
+      fromPaarl.push(storeList[i]);
+    }
+
+    if(storeList[i].endsWith("JHB"))
+    {
+      fromJHB.push(storeList[i]);
+    }*/
+  }
+
+  return fromCPT;
+}
+
+var fromCapeTown = allFromTown("CA 1244-3444, sned JHB, CJ 5532-4444, CA 2121-522, CJ 1554-5522, DA 1323-ddJHB");
+//var fromPaarlie = allFromTown("CA 1244-3444, sned JHB, CJ 5532-4444, CA 2121-522, CJ 1554-5522, DA 1323-ddJHB");
+//var fromJozi = allFromTown("CA 1244-3444, sned JHB, CJ 5532-4444, CA 2121-522, CJ 1554-5522, DA 1323-ddJHB");
+
+assert.deepEqual(fromCapeTown, [ "CA 1244-3444", "CA 2121-522" ]);
+//assert.deepEqual(allFromTown(fromPaarlie), [ "CJ 5532-4444", "CJ 1554-5522" ]);
+//assert.deepEqual(allFromTown(fromJozi), [ "sned JHB", "DA 1323-ddJHB" ]);
+
+console.log(fromCapeTown);
