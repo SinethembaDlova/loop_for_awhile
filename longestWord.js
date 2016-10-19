@@ -3,7 +3,7 @@ const assert = require('assert');
 var longestWord = function(sentence)
 {
   var words = sentence.split(" ");
-  var longest = ;
+  var longest = 0;
 
   for( var w = 0; w < words.length; w++)
   {
